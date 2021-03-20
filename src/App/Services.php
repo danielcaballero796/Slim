@@ -1,8 +1,8 @@
 <?php 
 
-use App\Services\ArticlesService;
+use App\Services\UsersService;
 use Psr\Container\ContainerInterface;
 
-$container->set('articles_service',function(ContainerInterface $container){
-    return new ArticlesService($container->get('articles_model'));
+$container->set('users_service',function(ContainerInterface $container){
+    return new UsersService($container->get('users_model'));
 });

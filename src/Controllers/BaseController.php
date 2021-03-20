@@ -1,7 +1,6 @@
-<?php namespace App\Controllers;
-
+<?php
+namespace App\Controllers;
 use Psr\Container\ContainerInterface;
-use App\Service\ArticlesService;
 
 abstract class BaseController{
 
@@ -11,7 +10,7 @@ abstract class BaseController{
         $this->container = $container;
     }
 
-    protected function getArticlesService(){
-        return $this->container->get('articles_service');
+    protected function getUsersService(){
+        return $this->container->get('users_service');
     }
 }

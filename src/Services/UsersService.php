@@ -1,21 +1,18 @@
 <?php namespace App\Services;
 
-use App\Models\ArticlesModel;
+use App\Models\UsersModel;
 
-
-
-
-class ArticlesService{
+class UsersService{
 
     // OBTENER TODOS LOS REGISTROS
     protected $articlesModel;
 
-    public function __construct(ArticlesModel $model){
+    public function __construct(UsersModel $model){
         $this->articlesModel = $model;
     }
 
     public function getAll(){
-        return $this->articlesModel->getAllArticles();
+        return $this->articlesModel->getAllUsers();
     }
 
 }

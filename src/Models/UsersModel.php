@@ -1,6 +1,6 @@
 <?php namespace App\Models;
 
-class ArticlesModel{
+class UsersModel{
 
     protected $pdo;
 
@@ -8,8 +8,8 @@ class ArticlesModel{
         $this->pdo = $db;
     }
 
-    public function getAllArticles(){
-        $sql = "SELECT * FROM articles";
+    public function getAllUsers(){
+        $sql = "SELECT * FROM usuario";
         $query = $this->pdo->query($sql);
         return $query->fetchAll();
     }
