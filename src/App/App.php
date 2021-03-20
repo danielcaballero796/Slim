@@ -1,5 +1,7 @@
 <?php
+
 use Slim\Factory\AppFactory;
+
 require __DIR__ . '/../../vendor/autoload.php';
 
 // Instancia del contenedor en el cual estara la app con ayuda de la dependencia php-di

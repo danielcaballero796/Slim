@@ -1,11 +1,11 @@
 # Slim - Framework
 
 - Documentación
-  - [English](#a-|-instructions-for-new-project)
-  - [Spanish](#a-|-instrucciones-crear-nuevo-proyecto)
+  - [English](#instructions-for-new-project)
+  - [Spanish](#instrucciones-crear-nuevo-proyecto)
 
 
-## A | Instructions For New Project
+## Instructions For New Project
 1.- Install Slim Framework
 ``` 
 composer require slim/slim:4.* 
@@ -41,6 +41,7 @@ RewriteRule ^ index.php [QSA,L]
 ### Requirements: 
 - Virtual Host pointing **"public/"** directory
 - PHP 7.1 >
+- Postman
 
 ### Configurations:
 
@@ -71,7 +72,13 @@ composer install
 
 #
 
-## A | Instrucciones Crear Nuevo Proyecto
+## D | Installation
+1.- Deploy the database with the name slimFramework
+2.- Deploy Slim.json file in Postman for consumption of basic services (CRUD)
+
+#
+
+## Instrucciones Crear Nuevo Proyecto
 1.- Instalar Slim Framework
 ``` 
 composer require slim/slim:4.* 
@@ -107,6 +114,7 @@ RewriteRule ^ index.php [QSA,L]
 ### Requisitos: 
 - Host Virtual apuntando a la carpeta **"public/"**
 - PHP 7.1 >
+- Postman
 
 ### Configuraciones:
 
@@ -134,3 +142,7 @@ git clone + url repositorio
 composer install
 ```
 3.- Correr el servidor previamente configuración con xampp o cualquier otro
+
+## C | Instalacion
+1.- Desplegar la base de datos con el nombre slimFramework
+2.- Desplegar el archivo Slim.json en Postman para el consumo de los servicios básicos (CRUD)

@@ -1,0 +1,128 @@
+{
+	"info": {
+		"_postman_id": "8dead61f-5a78-499f-8f3b-6d3cb082a9b2",
+		"name": "Slim Framework",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Peticion de Usuarios",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://slimframework.com:10002/api/",
+					"protocol": "http",
+					"host": [
+						"slimframework",
+						"com"
+					],
+					"port": "10002",
+					"path": [
+						"api",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://slimframework.com:10002/api/insert",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\":\"New User\"\r\n}\r\n"
+				},
+				"url": {
+					"raw": "http://slimframework.com:10002/api/",
+					"protocol": "http",
+					"host": [
+						"slimframework",
+						"com"
+					],
+					"port": "10002",
+					"path": [
+						"api",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://slimframework.com:10002/api/update",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":2,\r\n    \"nombre\":\"User Update\"\r\n}\r\n"
+				},
+				"url": {
+					"raw": "http://slimframework.com:10002/api/",
+					"protocol": "http",
+					"host": [
+						"slimframework",
+						"com"
+					],
+					"port": "10002",
+					"path": [
+						"api",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://slimframework.com:10002/api/delete",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":2\r\n}"
+				},
+				"url": {
+					"raw": "http://slimframework.com:10002/api/",
+					"protocol": "http",
+					"host": [
+						"slimframework",
+						"com"
+					],
+					"port": "10002",
+					"path": [
+						"api",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
