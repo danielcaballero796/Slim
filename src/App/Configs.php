@@ -9,7 +9,7 @@ $container->set('settings', function () {
         "DB_HOST" => 'localhost',
         "DB_NAME" => 'slimFramework',
         "DB_USER" => 'root',
-        "DB_PASS" => '',
+        "DB_PASS" => 'Soporte',
         "DB_CHAR" => 'utf8'
     ];
 });

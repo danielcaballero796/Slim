@@ -73,8 +73,8 @@ composer install
 #
 
 ## D | Installation
-1.- Deploy the database with the name slimFramework
-2.- Deploy Slim.json file in Postman for consumption of basic services (CRUD)
+- 1.- Deploy the database with the name slimFramework
+- 2.- Deploy Slim.json file in Postman for consumption of basic services (CRUD)
 
 #
 
@@ -144,5 +144,5 @@ composer install
 3.- Correr el servidor previamente configuración con xampp o cualquier otro
 
 ## C | Instalacion
-1.- Desplegar la base de datos con el nombre slimFramework
-2.- Desplegar el archivo Slim.json en Postman para el consumo de los servicios básicos (CRUD)
+- 1.- Desplegar la base de datos con el nombre slimFramework
+- 2.- Desplegar el archivo Slim.json en Postman para el consumo de los servicios básicos (CRUD)

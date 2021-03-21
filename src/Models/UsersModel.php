@@ -19,6 +19,22 @@ class UsersModel
      * Retorna todos los Usuarios de la base de datos.
      * @return JSON<Usuario> Puede contener los objetos consultados o estar vacío
      */
+    public function getAuthorization($token)
+    {
+        $sql = "SELECT * FROM usuario WHERE token= $token";
+        try {
+            $query = $this->pdo->query($sql);
+            $this->close();
+            return ($query->rowCount() > 0) ? true : false;
+        } catch (PDOException $e) {
+            return '{"error" : {"text":' . $e->getMessage() . '}';
+        }
+    }
+
+    /**
+     * Retorna todos los Usuarios de la base de datos.
+     * @return JSON<Usuario> Puede contener los objetos consultados o estar vacío
+     */
     public function getAllUsers()
     {
         $sql = "SELECT * FROM usuario";
@@ -39,13 +55,13 @@ class UsersModel
      * Busca un objeto Usuario en la base de datos
      * @return JSON<Usuario> Puede contener los objetos consultados o estar vacío
      */
-    public function getUser($id)
+    public function getUser($usuario)
     {
         $sql = "SELECT * FROM usuario WHERE id = ?";
         try {
 
             $query =  $this->pdo->prepare($sql);
-            $query->bindParam(1, $id, PDO::PARAM_INT);
+            $query->bindParam(1, $usuario->id, PDO::PARAM_INT);
             $query->execute();
             $cant = $query->rowCount();
             $data = $query->fetchAll();
@@ -102,6 +118,34 @@ class UsersModel
         try {
             $query =  $this->pdo->prepare($sql);
             $query->bindParam(1, $usuario->nombre, PDO::PARAM_STR, 100);
+            $query->bindParam(2, $usuario->id, PDO::PARAM_INT);
+            $query->execute();
+            $cant = $query->rowCount();
+            $query = null;
+            $this->close();
+
+            if ($cant > 0) {
+                return json_encode("El usuario se ha actualizado exitosamente.");
+            } else {
+                return json_encode("No existe el usuario en la BD.");
+            }
+        } catch (PDOException $e) {
+            return '{"error" : {"text":' . $e->getMessage() . '}';
+        }
+    }
+
+    /**
+     * Servicio para modificar el estado de un objeto Usuario en la base de datos.
+     * @param Usuario objeto con la información a modificar
+     * @return  Valor de la llave primaria 
+     * @throws NullPointerException Si los objetos correspondientes a las llaves foraneas son null
+     */
+    public function updateStateUsers($usuario)
+    {
+        $sql = "UPDATE usuario SET estado = ? WHERE id = ? ";
+        try {
+            $query =  $this->pdo->prepare($sql);
+            $query->bindParam(1, $usuario->estado, PDO::PARAM_STR, 100);
             $query->bindParam(2, $usuario->id, PDO::PARAM_INT);
             $query->execute();
             $cant = $query->rowCount();

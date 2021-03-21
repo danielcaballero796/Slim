@@ -8,11 +8,21 @@ class UsersService
 {
 
     // OBTENER TODOS LOS REGISTROS
-    protected $articlesModel;
+    protected $usersModel;
 
     public function __construct(UsersModel $model)
     {
-        $this->articlesModel = $model;
+        $this->usersModel = $model;
+    }
+
+    /**
+     * Servicio para retornar todos los Usuarios de la base de datos.
+     * @return  JSON un objeto json con la data de la tabla usuario
+     * @throws NullPointerException Si los objetos correspondientes a las llaves foraneas son null
+     */
+    public function getAuthorization($token)
+    {
+        return $this->usersModel->getAuthorization($token);
     }
 
     /**
@@ -22,7 +32,7 @@ class UsersService
      */
     public function getAll()
     {
-        return $this->articlesModel->getAllUsers();
+        return $this->usersModel->getAllUsers();
     }
     
     /**
@@ -32,7 +42,7 @@ class UsersService
      */
     public function select($id)
     {
-        return $this->articlesModel->getUser($id);
+        return $this->usersModel->getUser($id);
     }
 
     /**
@@ -43,7 +53,7 @@ class UsersService
      */
     public function insert($usuario)
     {
-        return $this->articlesModel->insertUsers($usuario);
+        return $this->usersModel->insertUsers($usuario);
     }
 
     /**
@@ -54,7 +64,18 @@ class UsersService
      */
     public function update($usuario)
     {
-        return $this->articlesModel->updateUsers($usuario);
+        return $this->usersModel->updateUsers($usuario);
+    }
+    
+    /**
+     * Servicio para modificar el estado de un objeto Usuario en la base de datos.
+     * @param Usuario objeto con la información a modificar
+     * @return  Mensaje mensaje del modelo con la respuesta
+     * @throws NullPointerException Si los objetos correspondientes a las llaves foraneas son null
+     */
+    public function updateState($usuario)
+    {
+        return $this->usersModel->updateStateUsers($usuario);
     }
 
     /**
@@ -65,6 +86,6 @@ class UsersService
      */
     public function delete($usuario)
     {
-        return $this->articlesModel->deleteUsers($usuario);
+        return $this->usersModel->deleteUsers($usuario);
     }
 }
